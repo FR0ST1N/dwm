@@ -16,6 +16,11 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_base05, col_base01, col_base05 },
 };
 
+/* audio */
+static const char *mutecmd[]    = { "pactl", "set-sink-mute",   "0", "toggle", NULL };
+static const char *volupcmd[]   = { "pactl", "set-sink-volume", "0", "+5%",    NULL };
+static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%",    NULL };
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -92,6 +97,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_equal,  spawn,          {.v = mutecmd} },
+	{ MODKEY,                       XK_minus,  spawn,          {.v = voldowncmd} },
+	{ MODKEY,                       XK_equal,  spawn,          {.v = volupcmd} },
 };
 
 /* button definitions */
