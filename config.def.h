@@ -7,13 +7,13 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono NL:size=10" };
 static const char dmenufont[]       = "JetBrains Mono NL:size=10";
-static const char col_base00[]      = "#1d2021";
-static const char col_base01[]      = "#3c3836";
-static const char col_base05[]      = "#d5c4a1";
+static const char col_0[]      = "#1d2021";
+static const char col_1[]      = "#3c3836";
+static const char col_2[]      = "#d5c4a1";
 static const char *colors[][3]      = {
-	/*               fg         bg          border   */
-	[SchemeNorm] = { col_base05, col_base00, col_base01 },
-	[SchemeSel]  = { col_base05, col_base01, col_base05 },
+	/*               fg     bg     border   */
+	[SchemeNorm] = { col_2, col_0, col_1 },
+	[SchemeSel]  = { col_2, col_1, col_2 },
 };
 
 /* audio */
@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_base00, "-nf", col_base05, "-sb", col_base01, "-sf", col_base05, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_0, "-nf", col_2, "-sb", col_1, "-sf", col_2, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
