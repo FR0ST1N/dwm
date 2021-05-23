@@ -17,9 +17,9 @@ static const char *colors[][3]      = {
 };
 
 /* audio */
-static const char *mutecmd[]    = { "pactl", "set-sink-mute",   "0", "toggle", NULL };
-static const char *volupcmd[]   = { "pactl", "set-sink-volume", "0", "+5%",    NULL };
-static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%",    NULL };
+static const char *mutecmd[]    = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
+static const char *volupcmd[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%",    NULL };
+static const char *voldowncmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%",    NULL };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
